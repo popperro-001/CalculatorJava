@@ -38,7 +38,7 @@ public class Calculator {
                     break;
                 case "/":
                     if ((roman1.getRomanInt() / roman2.getRomanInt()) == 0) {
-                        throw new Exception("Error: not integer");
+                        throw new Exception("Error: less than 1");
                     } else {
                         System.out.println("Output:");
                         System.out.println(intRoman(roman1.getRomanInt() / roman2.getRomanInt()));
