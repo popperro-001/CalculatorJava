@@ -8,6 +8,7 @@ public class Calculator {
         Scanner scr = new Scanner(System.in);
         String str = scr.nextLine();
         String[] strArr = str.split(" ");
+        int length = strArr.length;
         boolean checkRoman = true;
         try {
             RomanNumerals.valueOf(strArr[0]);
@@ -15,7 +16,7 @@ public class Calculator {
         } catch (IllegalArgumentException e) {
             checkRoman = false;
         }
-        if (checkRoman) {
+        if (checkRoman && length < 4) {
             RomanNumerals roman1 = RomanNumerals.valueOf(strArr[0]);
             RomanNumerals roman2 = RomanNumerals.valueOf(strArr[2]);
             switch (strArr[1]) {
@@ -49,7 +50,6 @@ public class Calculator {
         } else {
             int num1 = Integer.parseInt(strArr[0]);
             int num2 = Integer.parseInt(strArr[2]);
-            int length = strArr.length;
             if (num1 > 0 && num1 <= 10 && num2 > 0 && num2 <= 10 && length < 4) {
                 switch (strArr[1]) {
                     case "+":
